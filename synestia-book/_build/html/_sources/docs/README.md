@@ -69,6 +69,10 @@ In addition, these notebooks satisfy the following student learning outcomes bas
 ## Acknowledgements
 I included previously published figures and videos throughout these notebooks. For each copyrighted material that appears in this thesis, I have referenced its respective source. The respective copyright owners have granted permission for their materials' use in this academic, non-profit publication. The materials have been reprinted with permission from: Donna Cox of the University of Illinois at Urbana-Champaign Visualization Center, The American Association for the Advancement of Science or AAAS (<i>Science</i>) and Robin M. Canup of Southwest Research Institute, American Geophysical Union or AGU (<i>Journal of Geophysical Research</i>) and Simon J. Lock, and Raluca Rufu. Email correspondence proving permission to use these copyrighted materials is located in the folder `copyright_permissions`.
 
+This work is made possible by the community development in the python ecosystem, including NumPy (Van Der Walt et al. 2011), matplotlib (Hunter 2007), SciPy (Virtanen et al. 2020), the [Jupyter project](https://jupyter.org/), and [ipywidgets](https://ipywidgets.readthedocs.io/en/latest/index.html).
+
+[Jupyter Book](https://jupyterbook.org/) and many of the tools it uses are stewarded by the [Executable Book Project](https://executablebooks.org/en/latest/), which is supported in part by the [Alfred P. Sloan foundation](https://sloan.org/grant-detail/9231).
+
 ## Contact
 This set of Jupyter Notebooks is intended for non-profit educational purposes, in partial fulfillment of Gigja Hollyday's M.S. thesis in Geology at the University of California, Davis. For inquiries or feedback, please email gohollyday at ucdavis dot edu.
 
@@ -76,6 +80,8 @@ This set of Jupyter Notebooks is intended for non-profit educational purposes, i
 Barba, L., & Forsyth, G. (2018). CFD python: The 12 steps to Navier-Stokes equations. <i>Journal of Open Source Education</i>, 1 (9), 21.
 
 Freeman, S., Eddy, S. L., McDonough, M., Smith, M. K., Okoroafor, N., Jordt, H., & Wenderoth, M. P. (2014). Active learning increases student performance in science, engineering, and mathematics. <i>Proceedings of the National Academy of Sciences</i>, 111 (23), 8410-8415.
+
+Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. <i>Computing in Science & Engineering</i>, 9, 90, doi: 10.1109/MCSE.2007.55
 
 Kluyver, T., Ragan-Kelley, B., Pérez, F., Granger, B., Bussonnier, M., Frederic, J., Kelley, K., Hamrick, J., Grout, J., Corlay, S., Ivanov, P., Avila, D., Abdalla, S., and Willing, C. (2016). Jupyter notebooks -- a publishing format for reproducible computational work flows. In F. Loizides & B. Schmidt (Eds.), <i>Positioning and Power in Academic Publishing: Players, Agents and Agendas</i> (p. 87-90). IOS Press.
 
@@ -87,4 +93,10 @@ Rein, H., & Spiegel, D. S. (2015). IAS15: a fast, adaptive, high-order integrato
 
 Stewart, S. T. (2019). <i>Where did the Moon come from? A new theory.</i> TED Salon: U.S. Air Force. Retrieved from https://www.ted.com/talks/sarah_t_stewart_where_did_the_moon_come_from_a_new_theory?language=en (TED)
 
+Van Der Walt, S., Colbert, S. C., & Varoquaux, G. (2011) The NumPy Array: A Structure for Efficient Numerical Computation. <i>Computing in Science & Engineering</i>, 13, 22-30.
+
+Virtanen, P., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. <i>Nature Methods</i>, 17, 261-272, doi:10.1038/s41592-019-0686-2.
+
 Wells, J. B. (Ed.). (2015). <i>CAS learning and development outcomes</i> (9th ed.). Council for the Advancement of Standards in Higher Education. Retrieved from http://standards.cas.edu/getpdf.cfm?PDF=D87A29DC-D1D6-D014-83AA8667902C480B (CAS)
+
+

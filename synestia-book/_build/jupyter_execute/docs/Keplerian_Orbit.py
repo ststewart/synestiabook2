@@ -24,6 +24,7 @@
 # ```{margin} Running a code cell
 # Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
 # ```
+# Click the + symbol to see the code that generates the next interactive feature.
 
 # In[1]:
 
