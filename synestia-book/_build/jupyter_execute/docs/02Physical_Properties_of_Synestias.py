@@ -23,31 +23,12 @@
 # 
 # ### Temperatures in an Earth-mass Synestia
 
-# In[1]:
-
-
-from IPython.display import HTML
-HTML('''<script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
-</script>
-The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
 # ```{margin} Running a code cell
 # Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
 # ```
+# Click the + symbol to see the code that generates the next interactive feature.
 
-# In[2]:
+# In[1]:
 
 
 from syndef import synfits
@@ -247,14 +228,9 @@ interact(temperature_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=
 
 # Synestias are flared due to the large volume of gas in their disk-like regions. As a result, pressures in the moon-forming region are higher than expected for an equivalent traditional planet-disk system. What are the pressures at the moon-forming region (r$_{xy}$ = 20,000 km, z = 0 km) in the Earth-mass synestia in the pressure plots below? What is the range of pressures in the disk-like region in this Earth-mass synestia? How does it compare to Earth's present-day atmosphere? Do you notice a difference in the magnitude of pressures in the disk-like region versus the planet-like region?
 
-# In[3]:
+# Click the + symbol to see the code that generates the next interactive feature.
 
-
-HTML('''The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
-# In[4]:
+# In[2]:
 
 
 #do same thing for pressure
@@ -393,14 +369,9 @@ interact(pressure_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=2e3
 
 # Now that you have an idea of how heavy a synestia's gas would feel, how thick would the gas be in various parts of a synestia (e.g. disk-like region, mantle, and core)? In other words, how dense would it be? For comparison, under standard conditions (at sea level and 15$^{\circ}$C), our air's density is 1.225 kg/m$^3$, liquid water on Earth has a density of about 1,000 kg/m$^3$, and solid iron has a density of about 10,000 kg/m$^3$.
 
-# In[5]:
+# Click the + symbol to see the code that generates the next interactive feature.
 
-
-HTML('''The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
-# In[6]:
+# In[3]:
 
 
 #do same thing for density
@@ -540,14 +511,9 @@ interact(density_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=2e3,
 # 
 # If we apply this thought process to a synestia, then we can represent a synestia, a continuous body of fluid (gas in particular), as a cloud of gas particles, where each particle has its own mass, size, position, and velocity. Let's take a look at the plot below, where we compare an Earth-mass synestia with a uniform sphere of radius R$_{Earth}$ of the same total mass as the synestia.
 
-# In[7]:
+# Click the + symbol to see the code that generates the next interactive feature.
 
-
-HTML('''The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
-# In[8]:
+# In[4]:
 
 
 G = 6.67408e-11 #mks #gravitational constant
