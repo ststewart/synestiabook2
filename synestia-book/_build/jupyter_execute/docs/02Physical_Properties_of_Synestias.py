@@ -43,6 +43,10 @@ The raw code for this IPython notebook is hidden by default for easier reading.
 To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
 
 
+# ```{margin} Running a code cell
+# Access interactive features by 'Launch Binder' or 'Launch CoLab' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
+# ```
+
 # In[2]:
 
 
