@@ -6,6 +6,6 @@
 
 [Midplane](./Midplane.ipynb)
 
-[Poincare Wavre Theorem](./Poincare_Wavre.ipynb)
+[Poincare-Wavre Theorem](./Poincare_Wavre.ipynb)
 
 [Spherical and Cylindrical Coordinates](./Spherical_Cylindrical_Coordinates.ipynb)
