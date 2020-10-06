@@ -68,26 +68,6 @@ Video("https://cdnapisec.kaltura.com/p/1329972/sp/132997200/playManifest/entryId
 # 
 # A synestia's shape will remain flared for some time. The <i>photosphere</i> of a synestia, the optically thin layer enveloping a synestia, is in contact with the cold (200 K) vacuum of space. The photosphere is the surface where vapor saturates and is able to condense. Think of it as a synestia's cloud layer. The photosphere will radiate away heat, causing the outer layers of vapor to condense into rock rain. As a synestia continues to shrink and condense, its outer edges recede with time. Eventually, a synestia will cool and shrink to a more spherical shape and transition into a rapidly rotating, molten planet. Since the planet is rapidly rotating, it will have a bulge around its equator, taking on an ellipsoidal shape that is described as <i>oblate</i>.
 
-# In[3]:
-
-
-from IPython.display import HTML
-HTML('''<script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
-</script>
-The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
 # ## References
 # 
 # Cameron, A. G. W., & Ward, W. (1976). The origin of the Moon. In <i>Proc. 7th Lunar Science Conference</i>. Lunar and Planetary Institute.

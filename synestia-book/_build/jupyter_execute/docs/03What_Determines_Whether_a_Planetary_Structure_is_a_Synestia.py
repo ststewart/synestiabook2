@@ -23,31 +23,12 @@
 # 
 # So, think of it like this: if a planet's equatorial radius exceeds the orbital radius of a geosynchronous satellite, then the planet morphs into a synestia. Please see the interactive below. Pay attention to how the planet's equator (at z = 0 km on orange body) and moon (red dot) move in relation to one another as the planet's rotation speeds up (length of day decreases) and reaches the corotation limit (body turns cyan).
 
-# In[1]:
-
-
-from IPython.display import HTML
-HTML('''<script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
-</script>
-The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
 # ```{margin} Running a code cell
 # Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
 # ```
+# Click the + symbol to see the code that generates the next interactive feature.
 
-# In[2]:
+# In[1]:
 
 
 import math

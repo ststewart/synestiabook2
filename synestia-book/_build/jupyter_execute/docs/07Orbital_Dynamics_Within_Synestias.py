@@ -58,31 +58,12 @@
 # 
 # The interactive plot below maintains the planet's Keplerian orbit and angular momentum while allowing you to change the planet's mass. The planet's angular momentum is currently set to roughly the present-day angular momentum of Earth. How strong of a constraint is conservation of angular momentum on a Keplerian orbit (e.g. how does changing the mass affect the trajectory of the planet's orbit)?
 
-# In[1]:
-
-
-from IPython.display import HTML
-HTML('''<script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
-</script>
-The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
 # ```{margin} Running a code cell
 # Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
 # ```
+# Click the + symbol to see the code that generates the next interactive feature.
 
-# In[2]:
+# In[1]:
 
 
 #interactive playing with moon (changing mass, radius, velocity)
@@ -193,7 +174,7 @@ interact(pltAM,
 # 
 # The angular momentum of a synestia must be conserved if a synestia is an isolated system, but a synestia is not isolated. Synestias are giant-impact-created planet- and moon- forming bodies that orbit their host star. Tidal interactions between a synestia and its moon(s) affect the star as well. The transfer of the angular momentum of the Earth-Moon system, freshly formed from a synestia with higher angular momentum than the present-day Earth-Moon system, to its sun can decrease the Earth-Moon system's angular momentum when the three body system is aligned just right ([Ćuk & Stewart, 2012](https://science.sciencemag.org/content/338/6110/1047.abstract?casa_token=YK2s0T0-hS4AAAAA:NOkq6ZlzamipqH46gW0Fwj7tC4J9OljQ8On5I7WOZZFf5mEoydHczQUL5C08Gx3HNfZwoL9Up9jkp48)). This is known as an <i>evection resonance</i>. An evection resonance occurs when a right angle forms between the Moon, Earth, and sun, with Earth at its vertex (see video below).
 
-# In[3]:
+# In[2]:
 
 
 from IPython.display import YouTubeVideo

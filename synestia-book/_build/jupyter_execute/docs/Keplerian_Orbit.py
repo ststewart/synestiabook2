@@ -21,31 +21,11 @@
 # 
 # Below is an interactive plot of what a Keplerian orbit should look like for a moonlet (dot) orbiting an Earth-mass body (star). Feel free to play with the semi-major axis (half the distance between the farthest parts of the orbit, a in the image above), inclination (how rotated the orbital plane with comparison to the midplane), and eccentricity of the moonlet's orbit and see how it affects the moonlet's trajectory. Inclination is in radians, where 0$^\circ$ is 0 radians and 180$^\circ$ is $\pi$ radians. To convert from radians to degrees, multiply the number in radians by 180/$\pi$.
 
-# In[1]:
-
-
-from IPython.display import HTML
-HTML('''<script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
-</script>
-The raw code for this IPython notebook is by default hidden for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
 # ```{margin} Running a code cell
 # Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
 # ```
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np

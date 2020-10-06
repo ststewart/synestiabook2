@@ -64,31 +64,12 @@
 # 
 # You may have to be patient while the plots load. If there is output but no images, re-run the notebook. If the plots do not load after 1-2 minutes, restart the notebook.
 
-# In[1]:
-
-
-from IPython.display import HTML
-HTML('''<script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
-</script>
-The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
 # ```{margin} Running a code cell
 # Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
 # ```
+# Click the + symbol to see the code that generates the next interactive feature.
 
-# In[2]:
+# In[1]:
 
 
 import rebound
@@ -222,14 +203,9 @@ interact(pltJ2,
 # 
 # Take a look at the interactive below for the angular velocity profile (red) corresponding to the sub-Keplerian orbit of gas particles in the midplane at various cylindrical radii within a synestia. The corresponding Keplerian angular velocity profile is plotted as a dashed grey line for reference. Feel free to change the pressure term multiplier. The higher the multiplier, the stronger the pressure support will be.
 
-# In[3]:
+# Click the + symbol to see the code that generates the next interactive feature.
 
-
-HTML('''The raw code for this IPython notebook is hidden by default for easier reading.
-To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
-
-
-# In[4]:
+# In[2]:
 
 
 G_hr=(6.674e-11)*(3600**2) #gravitational constant converted to m^3 kg^-1 hr^-2
