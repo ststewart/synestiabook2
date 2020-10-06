@@ -9,4 +9,8 @@
 <p>
 <p>
 <p>
-Image credits: S. T. Stewart, NASA
+Image credits: Logo image (Simon Lock); Cover page image
+(S. T. Stewart, NASA)<br>
+Updated October 6, 2020<p>
+
+
