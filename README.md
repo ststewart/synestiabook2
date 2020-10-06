@@ -2,7 +2,7 @@
 
 [This Jupyter Book is hosted at https://synestia.info](https://synestia.info)
 
-![alt text](./synestia-book/synesita.png "Synestia cartoon")
+![alt text](./synestia-book/synestia.png "Synestia cartoon")
 
 <center>A novel educational tool for presenting new concepts in science.</center>
 
@@ -18,8 +18,7 @@ Please send corrections/comments/questions to Professor Sarah T. Stewart, sts .a
 <p>
 <p>
 <p>
-Image credits: Logo image (Simon Lock); Cover page image
-(S. T. Stewart, NASA)<br>
+Image credit: Simon Lock<br>
 Updated October 6, 2020<p>
 
 
