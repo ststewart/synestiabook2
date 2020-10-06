@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Synestias — An Interactive Primer</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/synestia.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Synestias — An Interactive Primer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Preface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html#abstract">
+   Abstract
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01What_Are_Synestias.html">
+   What Are Synestias?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02Physical_Properties_of_Synestias.html">
+   Physical Properties of Synestias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03What_Determines_Whether_a_Planetary_Structure_is_a_Synestia.html">
+   What determines whether a planetary object is a synestia?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04How_Do_Synestias_Form.html">
+   How Do Synestias Form? (Giant Impacts)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05Forces_Acting_Within_Synestias.html">
+   Forces Acting Within a Synestia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06Gas_Drag_on_Moons_in_Synestias.html">
+   Gas Drag on Moons in Synestias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07Orbital_Dynamics_Within_Synestias.html">
+   Orbital Dynamics Within Synestias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices.html">
+   Appendices
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/syndef/AdachiGasDragDecayTimeCheck.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/quantecon-mini-example/master?urlpath=tree/mini_book/docs/syndef/AdachiGasDragDecayTimeCheck.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/quantecon-mini-example/blob/master/mini_book/docs/syndef/AdachiGasDragDecayTimeCheck.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### calculate decay time scales for lunar particles</span>
+<span class="c1"># based on Adachi et al (1976) formulation</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">const1</span><span class="o">=</span><span class="mf">10.5</span><span class="c1">#10 to 11; 10.55 (fiducial)</span>
+<span class="n">const2</span><span class="o">=</span><span class="mf">0.86</span><span class="c1">#0.85 to 0.9; 0.86 (fiducial)</span>
+<span class="n">const3</span><span class="o">=</span><span class="mf">1e38</span> <span class="c1">#0.9e35 (fiducial) / 1.5e33 (underestimate) / 1.1e37 (cross) / 1e38 (overestimate)</span>
+<span class="n">const4</span><span class="o">=-</span><span class="mf">5.1</span> <span class="c1">#-4.7 (fiducial) / -4.5 (underestimate) / -5 (cross) / -5.1 (overestimate)</span>
+
+<span class="n">dens</span> <span class="o">=</span> <span class="mf">3000.</span> <span class="c1">#kg/m^3</span>
+<span class="n">xMoon</span> <span class="o">=</span> <span class="mf">20E6</span> <span class="c1">#m</span>
+<span class="n">z0</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#initial z position of moonlet in m</span>
+<span class="n">percentSubKep</span> <span class="o">=</span> <span class="o">.</span><span class="mi">95</span>
+<span class="n">brad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">1e-3</span><span class="p">,</span><span class="mf">1e-2</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">10.</span><span class="p">,</span><span class="mf">1e2</span><span class="p">,</span><span class="mf">1e3</span><span class="p">,</span><span class="mf">1e4</span><span class="p">,</span><span class="mf">1e5</span><span class="p">,</span><span class="mf">1e6</span><span class="p">])</span> <span class="c1">#m</span>
+<span class="n">Mass_syn</span> <span class="o">=</span> <span class="mf">5e24</span> <span class="c1">#kg</span>
+<span class="n">G_hr</span><span class="o">=</span><span class="p">(</span><span class="mf">6.674e-11</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3600</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#gravitational constant converted to m^3 kg^-1 hr^-2</span>
+
+<span class="n">masses</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">dens</span><span class="o">*</span><span class="p">(</span><span class="n">brad</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mf">3.</span> <span class="c1">#kg</span>
+<span class="n">z_s</span><span class="o">=</span><span class="n">const1</span><span class="o">*</span><span class="p">(</span><span class="n">xMoon</span><span class="o">**</span><span class="n">const2</span><span class="p">)</span> <span class="c1">#scale height fit in m</span>
+<span class="n">rho_g</span><span class="o">=</span><span class="n">const3</span><span class="o">*</span><span class="p">(</span><span class="n">xMoon</span><span class="o">**</span><span class="n">const4</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">z0</span><span class="o">/</span><span class="n">z_s</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">vKep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">G_hr</span><span class="o">*</span><span class="n">Mass_syn</span><span class="o">/</span><span class="n">xMoon</span><span class="p">)</span> <span class="c1">#m/hr</span>
+<span class="n">v_g</span> <span class="o">=</span> <span class="n">percentSubKep</span><span class="o">*</span><span class="n">vKep</span> <span class="c1">#m/s gas velocity; 0.95 = v_gas/v_kep</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="p">(</span><span class="n">percentSubKep</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#parameter relating gas and Keplerian velocity, pressure/temp related</span>
+<span class="n">w_K</span> <span class="o">=</span> <span class="n">vKep</span><span class="o">/</span><span class="n">xMoon</span> <span class="c1">#angular velocity in hr^-1</span>
+<span class="n">Tper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">xMoon</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mf">4.</span><span class="o">*</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">G_hr</span><span class="o">*</span><span class="n">Mass_syn</span><span class="p">))</span> <span class="c1">#orbital period in hr</span>
+<span class="n">v_r</span> <span class="o">=</span> <span class="o">-</span><span class="n">v_g</span> <span class="o">+</span> <span class="n">vKep</span> <span class="c1">#m/hr; relative vel bet gas and particle; u = v_r since there are no y or z components to the gas or particle</span>
+<span class="n">drag</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">brad</span><span class="o">*</span><span class="n">brad</span><span class="o">*</span><span class="n">rho_g</span><span class="o">*</span><span class="n">v_r</span><span class="o">/</span><span class="n">masses</span> <span class="c1">#m/hr^2</span>
+<span class="n">gvar</span> <span class="o">=</span> <span class="n">drag</span><span class="o">/</span><span class="n">w_K</span> <span class="c1">#g parameterization</span>
+<span class="n">t_spiral</span> <span class="o">=</span> <span class="n">Tper</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">gvar</span><span class="o">*</span><span class="n">gvar</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">4.</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">eta</span><span class="o">*</span><span class="n">gvar</span><span class="p">)</span> <span class="c1">#hr</span>
+<span class="c1">#print(t_spiral)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">brad</span><span class="p">,</span><span class="n">t_spiral</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;rho = </span><span class="si">%f</span><span class="s1"> (kg/m^3)&#39;</span> <span class="o">%</span><span class="k">rho_g</span>)
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;body radius (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;decay time tau (hr)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/AdachiGasDragDecayTimeCheck_0_0.png" src="../../_images/AdachiGasDragDecayTimeCheck_0_0.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/syndef"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gigja O. Hollyday (edited by S. T. Stewart)<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>

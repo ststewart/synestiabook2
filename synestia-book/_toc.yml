@@ -1,0 +1,11 @@
+- file: docs/Preface.md
+  sections:
+    - file: docs/README.md
+    - file: docs/01What_Are_Synestias.ipynb
+    - file: docs/02Physical_Properties_of_Synestias.ipynb
+    - file: docs/03What_Determines_Whether_a_Planetary_Structure_is_a_Synestia.ipynb
+    - file: docs/04How_Do_Synestias_Form.ipynb
+    - file: docs/05Forces_Acting_Within_Synestias.ipynb
+    - file: docs/06Gas_Drag_on_Moons_in_Synestias.ipynb
+    - file: docs/07Orbital_Dynamics_Within_Synestias.ipynb
+    - file: docs/Appendices.md

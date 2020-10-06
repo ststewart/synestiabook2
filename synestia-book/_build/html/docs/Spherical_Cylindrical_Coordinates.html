@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spherical and Cylindrical Coordinates &#8212; Synestias — An Interactive Primer</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/synestia.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Synestias — An Interactive Primer</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Preface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html#abstract">
+   Abstract
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01What_Are_Synestias.html">
+   What Are Synestias?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02Physical_Properties_of_Synestias.html">
+   Physical Properties of Synestias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03What_Determines_Whether_a_Planetary_Structure_is_a_Synestia.html">
+   What determines whether a planetary object is a synestia?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04How_Do_Synestias_Form.html">
+   How Do Synestias Form? (Giant Impacts)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05Forces_Acting_Within_Synestias.html">
+   Forces Acting Within a Synestia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06Gas_Drag_on_Moons_in_Synestias.html">
+   Gas Drag on Moons in Synestias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07Orbital_Dynamics_Within_Synestias.html">
+   Orbital Dynamics Within Synestias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendices.html">
+   Appendices
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/Spherical_Cylindrical_Coordinates.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/quantecon-mini-example/master?urlpath=tree/mini_book/docs/Spherical_Cylindrical_Coordinates.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/quantecon-mini-example/blob/master/mini_book/docs/Spherical_Cylindrical_Coordinates.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="spherical-and-cylindrical-coordinates">
+<h1>Spherical and Cylindrical Coordinates<a class="headerlink" href="#spherical-and-cylindrical-coordinates" title="Permalink to this headline">¶</a></h1>
+<p><img alt="title" src="../_images/FigurePolarCoordinates.png" /></p>
+<p><i>Caption</i>: The spherical coordinate system (red axes) uses radius r (the distance from the origin which is often the center of the body), theta <span class="math notranslate nohighlight">\(\theta\)</span> (the angle between the x and y axes), and phi <span class="math notranslate nohighlight">\(\phi\)</span> [the angle between the midplane (z = 0) and the z axis]. Alternatively, the cylindrical coordinate system uses cylindrical radius r<span class="math notranslate nohighlight">\(_{xy}\)</span> (the distance perpendicular from the rotational axis), <span class="math notranslate nohighlight">\(\theta\)</span>, and z (distance from the midplane or xy plane). Both coordinate systems are often more useful than the Cartesian coordinate system (xyz, grey axes) to describe locations within or about ellipsoidal bodies, especially those that rotate like planets. Credit: G. O. Hollyday.</p>
+<p>Typically, we are used to dealing with xyz positions in three-dimensional space. It is easy to understand objects in terms of their x, y, and z dimensions (width, height, and depth, for example). The xyz coordinate system is what is known as <i>Cartesian</i> coordinates.</p>
+<p>However, it is not always easy to describe objects with Cartesian coordinates. For example, it is not intuitive to describe a sphere in terms of its xyz coordinates (would you know whether a certain location was on the surface or interior of a sphere based on an xyz coordinate?). It is much easier to describe a location on a sphere using a radius (the distance from the center of the object to the location) and angles (is the location on the back or the front of the sphere? Is the location on top or on bottom of the sphere?). The three-dimensional coordinate system that uses radii and angles to describe locations in space is called <i>spherical</i> coordinates.</p>
+<p>Spherical coordinates use r, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span> (see the image above).</p>
+<p>Radius r is the distance from the center of an object, or the origin (0, 0, 0) of the xyz axes, to a point in three-dimensional space. The radius is equal to</p>
+<div class="math notranslate nohighlight">
+\[r = \sqrt{x^2 + y^2 + z^2}\]</div>
+<p>On Earth, this would describe whether someone were on an airplane (above the surface) or on the surface (would vary depending on elevation, i.e. mountain, sea level, or scuba diving in the ocean).</p>
+<p>Theta <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the midplane (z = 0; perpendicular to rotational axis) and the radius. Theta is related to z via <span class="math notranslate nohighlight">\(z=rsin\theta\)</span>. In other words, theta describes how far from the midplane and in what direction off the midplane a location is. In relation to Earth, theta would describe whether someone is in the Northern or Southern Hemisphere and at which latitude.</p>
+<p>Phi <span class="math notranslate nohighlight">\(\phi\)</span> is the angle about the z axis. It describes a position in the xy plane (midplane). Phi is related to x and y via <span class="math notranslate nohighlight">\(tan\phi=y/x\)</span>. Theta is the equivalent of longitude on Earth (whether someone is in the Western or Eastern Hemisphere).</p>
+<p>Another handy coordinate is r<span class="math notranslate nohighlight">\(_{xy}\)</span> (cylindrical radius, sometimes referred to as s elsewhere). The cylindrical radius is the distance from the rotational axis (z) to a point in an xy plane, and is equal to</p>
+<div class="math notranslate nohighlight">
+\[r_{xy} = \sqrt{x^2 + y^2}\]</div>
+<p>Cylindrical radius is part of the <i>cylindrical</i> coordinate system (r<span class="math notranslate nohighlight">\(_{xy}\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and z). It is useful for describing objects that are more oblate or disk-like. If an object is axis-symmetric in its xy plane, then it is easier to describe a particular <i>annulus</i> (a cylindrical shell at a given cylindrical radius) instead of all the x,y points in that annulus. If we use cylindrical radius as our horizontal axis and z as our vertical axis, we can plot a synestia in a 2-D plane instead of a 3-D figure. It is much easier to analyze simulation data from the interior of a synestia this way.</p>
+<p>It is much easier to tell via spherical coordinates where a point in space is located relative to a spherical object. For example, if you were told that a planetary body has a radius of 1000 km and that there was an interesting geological feature at (r, <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span>) = (1010 km, 10<span class="math notranslate nohighlight">\(^\circ\)</span>, 90<span class="math notranslate nohighlight">\(^\circ\)</span>), it would be easier to determine the following:</p>
+<p><i>Is this feature below or above the surface of the planetary body?</i><br />
+We’ll use radius r to answer this question. It is above the surface by 10 km. The feature could either have a high elevation (e.g. mountain) or is orbiting the planetary body.</p>
+<p><i>Is this feature closer to the equator or the poles of the planetary body?</i><br />
+We’ll use theta <span class="math notranslate nohighlight">\(\theta\)</span> to answer this question. It is closer to the equator (0<span class="math notranslate nohighlight">\(^\circ\)</span>); it is just above the equator by 10<span class="math notranslate nohighlight">\(^\circ\)</span>.</p>
+<p><i>Is this feature on the near or far side of the planetary body? (Perhaps we were observing this object and want to know whether the feature is on the near side, the surface that we are currently viewing, or whether we will have to wait for the body to rotate so we can observe the feature)</i><br />
+We’ll use phi <span class="math notranslate nohighlight">\(\phi\)</span> to answer this question. It is on the far side. The right side of the near side is 0<span class="math notranslate nohighlight">\(^\circ\)</span>, so 90<span class="math notranslate nohighlight">\(^\circ\)</span> would mean the feature is near the center of the far side.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gigja O. Hollyday (edited by S. T. Stewart)<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>
