@@ -20,7 +20,8 @@
 # 
 # As Lock and Stewart studied a range of initial conditions for their database of higher-energy, higher-angular-momentum Moon-forming giant impacts, they noticed that some of the impacts resulted in a structure that was not a typical moon-forming disk. They had a flared shape similar to that of traditional disks (see image below) but did not have the same dynamics.
 
-# ![FigFlared.png](attachment:FigFlared.png)
+# ![FigFlared.png](Figures/FigFlared.png)
+# 
 
 # <i>Caption</i>. An example of a flared (disk-like) shape with a quarter cut-out (yellow reveals interior). Credit: G. O. Hollyday.
 
@@ -28,7 +29,7 @@
 
 # ## What Does a Synestia Look Like?
 
-# ![FigureSynestia.png](attachment:FigureSynestia.png)
+# ![FigureSynestia.png](Figures/FigureSynestia.png)
 
 # <i>Caption</i>. Artistic rendering of a synestia (left) with fully formed moon outside the synestia (right). Credit: G. O. Hollyday.
 
@@ -86,8 +87,6 @@ $( document ).ready(code_toggle);
 The raw code for this IPython notebook is hidden by default for easier reading.
 To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
 
-
-# To access the next Jupyter Notebook (<i>Physical Properties of Synestias</i>), click [here](02Physical_Properties_of_Synestias.ipynb).
 
 # ## References
 # 

@@ -37,7 +37,7 @@
 # 
 # ## Many Different Giant Impact Scenarios Can Result in a Moon-Forming Synestia
 
-# ![FigureGiantImpactSetup3.png](attachment:FigureGiantImpactSetup3.png)
+# ![FigureGiantImpactSetup3.png](Figures/FigureGiantImpactSetup3.png)
 
 # <i>Caption</i>. A wide range of giant impact initial conditions (ratio of mass of impactor to target body, angle of impact, relative velocity of impactor) can produce a Moon-forming synestia. This figure demonstrates two extreme cases. Both cases are quick, near head-on collisions. The left shows an equal mass impactor and target, and the right a small impactor and large target colliding. Credit: G. O. Hollyday and S. J. Lock.
 
@@ -51,8 +51,6 @@
 # After further research was completed on giant impacts and the thermodynamics within planet-disk systems, modelers realized that the debris disk was partially vaporized. Gas drag was integrated into simulations of canonical moon-forming giant impacts and the timescale on which the Moon accreted increased to 100's of years ([Salmon & Canup, 2012]()). However, it was assumed that gas was present only in certain locations within a planet-disk system, specifically, between the planet and the location of the growing moon. The material in the disk beyond the <i>Roche limit</i> (the radius beyond which moons are not broken apart by gravitational forces), the material that fed the growing moon, did not contain vapor.
 # 
 # In comparison, there is a tremendous vapor fraction within synestias and gas is present everywhere in the system. This is why gas dynamics are so important within synestias, and why the Moon's formation timescale in synestias is so long, 10's of years at the minimum ([Lock et al., 2018]()).
-
-# To access the next Jupyter Notebook (<i>Forces Acting Within Synestias</i>), click [here](05Forces_Acting_Within_Synestias.ipynb).
 
 # ## References
 # 

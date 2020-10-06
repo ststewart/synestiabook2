@@ -3,7 +3,7 @@
 
 # # Poincarè-Wavre Theorem
 
-# ![FigurePoincare.png](attachment:FigurePoincare.png)
+# ![FigurePoincare.png](Figures/FigurePoincare.png)
 
 # <i>Caption</i>. In a rotating body obeying Poincarè-Wavre theorem, material at the same cylindrical radius (distance from the rotational axis z) will rotate with the same angular velocity $\omega$. Additionally, the body is stable when its specific angular momentum j (angular momentum per unit mass) increases with increasing cylindrical radius.  Credit: G. O. Hollyday.
 

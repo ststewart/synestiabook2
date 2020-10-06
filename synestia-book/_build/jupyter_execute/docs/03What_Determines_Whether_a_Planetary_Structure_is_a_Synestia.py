@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Before reading this Jupyter Notebook, it may be helpful to review [angular velocity]('Angular_Velocity.ipynb').
+# Before reading this Jupyter Notebook, it may be helpful to review [angular velocity](./Angular_Velocity.ipynb).
 
 # # What determines whether a planetary object is a synestia?
 # Imagine that you and a friend are sitting on the edge of a playground merry-go-round. You are sitting closer to the center and are strapped in place, while your friend is at the very edge, free of restraints. If you join hands and hold on to each other while a third person spins the merry-go-round faster and faster, you'll reach a point where your hands cannot hold on. Your friend will be subject to their own speed of rotation about the merry-go-round as they fly off. This is not physically applicable, but you can use it as an analogy to help wrap your head around what happens when a planetary object transforms into a synestia.
@@ -150,5 +150,3 @@ interactive_plot
 # In addition to increasing the rotation rate of a body, decreasing the density of a material also helps a body exceed the corotation limit. Decreasing the density of the material can indicate that the material is hotter. It is easier to exceed the corotation limit when the body is warmer.
 # 
 # However, it is easiest to cross the threshold between planet and synestia when decreasing the length of day for the planet (the time it takes for a planet to complete one rotation) as opposed to changing the planet's mass or density. The corotation limit is most sensitive to the rate of rotation of a body. The faster a planet spins, the more likely it will transition into a synestia. This is why it is easier for planets with greater angular momentum, particularly those involved in giant impacts, to become synestias.
-
-# To access the next Jupyter Notebook (<i>How Do Synestias Form?</i>), click [here](04How_Do_Synestias_Form.ipynb).

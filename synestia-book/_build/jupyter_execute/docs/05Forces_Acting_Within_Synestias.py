@@ -276,7 +276,7 @@ interact(pltomg,
 # 
 # #### Hydrostatic Equilibrium
 
-# ![FigHydrostaticEquil.png](attachment:FigHydrostaticEquil.png)
+# ![FigHydrostaticEquil.png](Figures/FigHydrostaticEquil.png)
 
 # <i>Caption</i>. A parcel of fluid in a synestia (dark grey square, upper left) is in hydrostatic equilibrium in z if its gravitational (g$_z$) and pressure forces (dP/$\rho$ dz) are equal. The black contours represent surfaces of constant pressure, where contours farthest from the origin have the lowest pressure values. Hydrostatic equilibrium defines the curvature of the pressure contours, which give synestias their flared shape. Credit: G. O. Hollyday.
 
@@ -295,5 +295,3 @@ interact(pltomg,
 # Say we picked two pressure contours in a synestia, where dP is the difference in pressure between the two (see image above). If we selected some cylindrical radius r$_{xy,A}$, where $\rho_A$ is the density and g$_A$ is the gravitational acceleration at the higher pressure contour, then the vertical distance between the two pressure contours would be dz$_A$. If we then focused on a larger cylindrical radius r$_{xy,B}$, where r$_{xy,B}$ $>$ r$_{xy,A}$, then the density and gravitational acceleration at the higher pressure contour would be smaller such that $\rho_B$ $<$ $\rho_A$ and g$_B$ $<$ g$_A$. To maintain hydrostatic equilibrium, the distance between the pressure contours must increase so that dz$_B$ $>$ dz$_A$.
 # 
 # This results in a flared pressure contour. As cylindrical radius increases linearly, the increase in the distance between the pressure contours is not linear. Gravitational forces decrease with increasing cylindrical radius more quickly than pressure forces do, allowing fluid at a given pressure to settle into hydrostatic equilibrium at increasingly higher z for greater r$_{xy}$.
-
-# To access the next Jupyter Notebook (<i>Gas Drag on Moons in Synestias</i>), click [here](06Gas_Drag_on_Moons_in_Synestias.ipynb).

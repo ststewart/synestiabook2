@@ -3,7 +3,7 @@
 
 # # Keplerian Orbit
 
-# ![FigureKeplerianOrbit.png](attachment:FigureKeplerianOrbit.png)
+# ![FigureKeplerianOrbit.png](Figures/FigureKeplerianOrbit.png)
 
 # Caption. A planet with mass m and velocity v undergoes a Keplerian orbit about a star (sun) with mass M. This particular orbit is elliptical and has a semi-major axis of a. The planet will have a faster orbital speed when it is closer to the star (smaller radius r), such as at point A compared to point E. In a Keplerian orbit, the orbiting body stably orbits the central body since its perpendicular motion to the star is balanced by the central body's inward gravitational pull a$_{gravity}$. Credit: G. O. Hollyday.
 
@@ -21,7 +21,7 @@
 # 
 # Below is an interactive plot of what a Keplerian orbit should look like for a moonlet (dot) orbiting an Earth-mass body (star). Feel free to play with the semi-major axis (half the distance between the farthest parts of the orbit, a in the image above), inclination (how rotated the orbital plane with comparison to the midplane), and eccentricity of the moonlet's orbit and see how it affects the moonlet's trajectory. Inclination is in radians, where 0$^\circ$ is 0 radians and 180$^\circ$ is $\pi$ radians. To convert from radians to degrees, multiply the number in radians by 180/$\pi$.
 
-# In[1]:
+# In[ ]:
 
 
 from IPython.display import HTML

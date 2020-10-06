@@ -12,7 +12,7 @@
 # 
 # ## Gas Drag Equation
 
-# ![FigureGasDrag.png](attachment:FigureGasDrag.png)
+# ![FigureGasDrag.png](Figures/FigureGasDrag.png)
 
 # <i>Caption</i>. Gas drag acting on a sphere with a cross sectional area A of $\pi$r$_{body}^2$. The sphere has a mass m$_{body}$ and is moving with a velocity u$_{body}$ through a gas with density $\rho_{gas}$ moving at a velocity u$_{gas}$. As the sphere moves through the gas, gas particles will pile up in front of the sphere, creating a high pressure region. The gas drag that arises as a result of the velocity differential between the gas and sphere imparts an acceleration a$_{drag}$ on the sphere. Credit: G. O. Hollyday.
 
@@ -386,8 +386,6 @@ interact_manual(pltdrag,
 # ### Vaporization of Droplets May Slow Their Decay But Decrease Mass that Feeds Lunar Seed
 # 
 # There is another factor as well. As a droplet descends into a synestia, the temperature and pressure of the gas surrounding the droplet will increase, with maximum temperature and pressure values at the midplane. A droplet must combat vaporization in order to provide liquid material for the moon to grow from. The good news is that if a droplet vaporizes, its decay ceases as it buoys up towards the photosphere and remains in the moon-forming region of a synestia. This is a bit more complicated considering there are interactions with other droplets occurring, which may involve <i>thermal buffering</i> (some droplets at lower z act as shields and provide temperature buffers for the droplets behind them at greater z). However, if the mass of condensed material reaching the midplane is less due to vaporization of droplets, then less material accretes to the lunar seed at any given time. The lunar seed may decay more quickly if this is true. I will not explore the effects of vaporization here, but keep it in mind as you evaluate the decay times in the interactive figure above.
-
-# To access the next Jupyter Notebook (<i>Orbital Dynamics Within Synestias</i>), click [here](07Orbital_Dynamics_Within_Synestias.ipynb).
 
 # ## References
 # 

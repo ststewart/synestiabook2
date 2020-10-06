@@ -2,7 +2,7 @@
 
 This is a [Jupyter Book](https://jupyterbook.org) version of the Masters Thesis titled "Educational Visualization Tools for Conveying Research: Jupyter Notebooks on Synestias" by Gigja Hollyday, Department of Earth and Planetary Sciences, U. California Davis, 2020.
 
-The set of Jupyter Notebooks was developed as an interactive educational resource on the topic of synestias, a recently discovered type of planetary object. The thesis Notebooks are available at https://github.com/gohollyo/Synestia
+The set of Jupyter Notebooks was developed as an interactive educational resource on the topic of synestias, a recently discovered type of planetary object. The thesis Notebooks are available at [https://github.com/gohollyo/Synestia](https://github.com/gohollyo/Synestia).
 
 The original content has been lightly edited for the Book format.
 
@@ -21,24 +21,10 @@ The goal of this particular set of Jupyter Notebooks is to help people at the un
 ## REBOUND
 Simulations in this paper made use of the REBOUND code which is freely available at [GitHub](http://github.com/hannorein/rebound) ([Rein & Liu, 2012](https://www.aanda.org/articles/aa/abs/2012/01/aa18085-11/aa18085-11.html)). REBOUND is an open-source software that computes force interactions (gravity in particular) among spherical particles (can represent stars, planets, moons, ring or dust particles). It is efficient and easy to customize. The integrator in the simulations is IAS15, which uses an adaptive time step ([Rein & Spiegel, 2015](https://academic.oup.com/mnras/article/446/2/1424/2892331)).
 
-## Setting up These Jupyter Notebooks on Your Computer
-To launch these notebooks and run them in a web browser via Binder, click [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gohollyo/Synestia/master). Note that it may take a few minutes to load.
+## Interactive Python Widgets
+To launch the interactive book pages and run them in a web browser using Binder, click on the rocket icon in the upper right corner of the page and select Binder. Not every page has an interactive component. Note that it may take a few minutes to load the interactive notebook.
 
-In order to use these Jupyter Notebooks on your own computer, you will need Python, Jupyter, and REBOUND.
-
-The easiest way to download both Jupyter and Python in one go is by downloading the [Anaconda distribution](https://www.anaconda.com/products/individual). Go to the link, scroll to the bottom of the webpage, and click on an installer according to your computer's operating system. Follow the installation instructions provided on the download webpage.
-
-To download the Python version of REBOUND, in your terminal type either:
-
-`pip install rebound`
-
-or
-
-`conda install -c conda-forge rebound`
-
-Once you have downloaded Python, Jupyter, REBOUND, and these notebooks onto your computer, you can run Jupyter by clicking on the Jupyter icon in the Anaconda app or by typing in the terminal:
-
-`jupyter notebook`
+If you wish to use the original Jupyter Notebooks on your own computer, you will need to install Python, Jupyter, and REBOUND. Follow the instructions given in [https://github.com/gohollyo/Synestia](https://github.com/gohollyo/Synestia).
 
 ## What's to Come
 In the Jupyter notebooks, you are guided through the various dynamics and attributes of synestias, mainly via interactive figures.  

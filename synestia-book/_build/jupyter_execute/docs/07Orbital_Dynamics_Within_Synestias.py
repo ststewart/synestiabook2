@@ -169,13 +169,13 @@ interact(pltAM,
 
 # If a moonlet in the midplane spirals inward, and is not accreted by another moonlet or slowed by any means, the moonlet will reach the corotating planet-like region of a synestia and become part of the central planet-like mass. This is known as "falling onto the planet". As the planet-like spheroid's mass increases, its spin must increase to conserve angular momentum (see image below). As a synestia evolves through time, the corotating region will likely rotate at an increasingly faster rate as it accretes more mass from moonlets that could not escape their decaying orbits.
 
-# ![FigDropletSpiralv2.2.png](attachment:FigDropletSpiralv2.2.png)
+# ![FigDropletSpiralv2.2.png](Figures/FigDropletSpiralv2.2.png)
 
 # Caption. Moons that become part of the planet-like region will cause the planet-like region to spin faster, according to conservation of angular momentum. As a moon (large blue circle on right) grows in a synestia, the gas surrounding the moon will drag on the moon, causing the moon to lose orbital velocity and move in towards the oblate, planet-like region (outlined by white dashed line). If the moon's radius r decreases to the point where it reaches and adds its mass to the planet-like region, the planet-like region must rotate faster to conserve the system's angular momentum. The faster the planet-like region spins, the more oblate it becomes, and the larger the planet-like region extends out in the midplane. Conceptual drawing of the cross-section of a synestia through its rotational axis where colors indicate density. Highest densities (liquid) are shown in blue, while lowest densities (vapor) are shown in yellow. Credit: adapted Figure 18 from ([Lock et al., 2018](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017JE005333)). Modified with permission from Simon J. Lock and reprinted with permission from AGU.
 
 # ## Decreasing the Angular Momentum of the Earth-Moon System
 
-# ![FigureEarthMoonTime.png](attachment:FigureEarthMoonTime.png)
+# ![FigureEarthMoonTime.png](Figures/FigureEarthMoonTime.png)
 
 # <i>Caption</i>. When the (liquid) Moon finishes growing from a synestia, it is close to the center of the Earth-Moon system (top left). At present, the Moon (bottom right) is far from Earth (bottom left). During the time between the Moon's formation and present-day, the Moon must move away from Earth, the synestia must evolve into a planet, and the Earth-Moon system must cool so that both bodies have crusts. Credit: images of today's Earth-Moon system (bottom) from NASA while conceptual image of synestia-Moon system (top) created by G. O. Hollyday.
 

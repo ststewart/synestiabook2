@@ -606,7 +606,7 @@ plt.close()
 # 
 # However, changing the mass distribution within a body will also affect J$_2$. It is possible to have two bodies with the same oblateness, but different J$_2$ values (see image below). Say there is one body of uniform density and the other body is split into a denser central region (like a core) and a less dense outer region (like a mantle). The uniform density spheroid will have a larger J$_2$ than the body with a varying density distribution (more mass concentrated near the center of the body).
 
-# ![FigureJ2.png](attachment:FigureJ2.png)
+# ![FigureJ2.png](Figures/FigureJ2.png)
 
 # <i>Caption</i>. The J$_2$ gravity term affects both the oblateness and mass distribution of a synestia. A body with a given mass, rotation, and mean density can be oblate but either have most of its mass concentrated at its center (ex. dense core and low density atmosphere) with a low J$_2$ (left) or have a uniform density throughout so that extended parts of the body have more mass, or higher J$_2$ (right). Credit: G. O. Hollyday.
 
@@ -615,8 +615,6 @@ plt.close()
 # Synestias exist in a temperature, pressure, and density regime that we are unfamiliar with. Synestias are very hot and their liquid-vapor interiors experience a wide range of pressures and densities. Rocky materials in this extreme thermal regime will behave as continuous fluids and experience tremendous pressure gas drag as liquids or support as vapor. The thermodynamics of a planet-disk system do not apply to a synestia. The hot, turbulent thermal history of a synestia will contribute to the evolution of the interior dynamics of its resultant planet.
 # 
 # Due to the rapid rotation of the planet-like region within a synestia, a synestia is very oblate. A synestia is axis-symmetric about its rotational axis. A synestia's mass distribution is different from that of a planet; more mass exists at the equator far from the center of the synestia (less mass is concentrated towards the center of the body). This aids moon formation in a synestia as it supplies more material to the moon-forming region. The oblate gravity field of a synestia also affects the orbits of rain and moonlets inside a synestia, which can aid or hurt lunar accretion (to be explored in Jupyter Notebook 5: Forces Acting Within Synestias).
-
-# To access the next Jupyter Notebook (<i>What Determines Whether a Planetary Structure is a Synestia?</i>), click [here](03What_Determines_Whether_a_Planetary_Structure_is_a_Synestia.ipynb).
 
 # ## References
 # 

@@ -7,7 +7,7 @@
 # ## Case 1
 # Body 1 is orbiting body 2, just like Earth travels on a curved path about the sun's rotational axis.
 
-# ![FigureAngVel.png](attachment:FigureAngVel.png)
+# ![FigureAngVel.png](Figures/FigureAngVel.png)
 
 # <i>Caption</i>. On the left, imagine having a bird's eye view of the plane that body 1 is orbiting body 2 (black dot at center) in. If body 1 were to conserve its angular velocity, body 1's orbital speed would quicken as its orbital distance from the center increased (from A to D). Credit: G. O. Hollyday.
 
