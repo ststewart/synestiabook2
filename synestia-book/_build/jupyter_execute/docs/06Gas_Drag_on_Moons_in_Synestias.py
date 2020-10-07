@@ -374,5 +374,3 @@ interact_manual(pltdrag,
 # Salmon, J., & Canup, R. M. (2012). Lunar accretion from a Roche-interior fluid disk. <i>The Astrophysical Journal</i>, 760 (83), 1-18.
 # 
 # Thompson, C., & Stevenson, D. J. (1988). Gravitational instability in two-phase disks and the origin of the Moon. <i>The Astrophysical Journal</i>, 333 (1), 452-481.
-
-# [QUICK LINKS TO INTERACTIVE CONTENT IN BINDER](./QuickLinks.md)

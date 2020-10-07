@@ -135,5 +135,3 @@ interactive_plot
 # In addition to increasing the rotation rate of a body, decreasing the density of a material also helps a body exceed the corotation limit. Decreasing the density of the material can indicate that the material is hotter. It is easier to exceed the corotation limit when the body is warmer.
 # 
 # However, it is easiest to cross the threshold between planet and synestia when decreasing the length of day for the planet (the time it takes for a planet to complete one rotation) as opposed to changing the planet's mass or density. The corotation limit is most sensitive to the rate of rotation of a body. The faster a planet spins, the more likely it will transition into a synestia. This is why it is easier for planets with greater angular momentum, particularly those involved in giant impacts, to become synestias.
-
-# [QUICK LINKS TO INTERACTIVE CONTENT IN BINDER](./QuickLinks.md)
