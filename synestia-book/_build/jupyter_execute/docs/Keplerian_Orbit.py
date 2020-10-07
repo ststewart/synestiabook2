@@ -22,21 +22,30 @@
 # Below is an interactive plot of what a Keplerian orbit should look like for a moonlet (dot) orbiting an Earth-mass body (star). Feel free to play with the semi-major axis (half the distance between the farthest parts of the orbit, a in the image above), inclination (how rotated the orbital plane with comparison to the midplane), and eccentricity of the moonlet's orbit and see how it affects the moonlet's trajectory. Inclination is in radians, where 0$^\circ$ is 0 radians and 180$^\circ$ is $\pi$ radians. To convert from radians to degrees, multiply the number in radians by 180/$\pi$.
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
+# Access interactive features by 'Launch Binder' or 'Launch CoLab' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. If using CoLab (loads faster), you need to edit the code cell as directed to install rebound.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 
 # In[1]:
 
 
+#Dear Reader: If using CoLab, remove the # from the line below and shift-return to install rebound
+#!pip install rebound
+
+
+# In[2]:
+
+
+#Interactive feature
 import numpy as np
 import math
 from ipywidgets import *
 import rebound
-from syndef import synfits #import synestia snapshot (impact database)
+#from syndef import synfits #import synestia snapshot (impact database)
 
 G=6.674e-11 #gravitational constant in SI
-Mass_syn=np.sum(synfits.SNAP_CukStewart.m) #Earth mass synestia in kg
+#Mass_syn=np.sum(synfits.SNAP_CukStewart.m) #Earth mass synestia in kg
+Mass_syn=5.972e24 # kg mass of Earth for this example
 dens=3300. #kg/m^3 lunar density
 
 def pltKep(rad_moon,sma,i,ecc):

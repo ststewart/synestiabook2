@@ -65,7 +65,7 @@
 # You may have to be patient while the plots load. If there is output but no images, re-run the notebook. If the plots do not load after 1-2 minutes, restart the notebook.
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
+# Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. Currently, CoLab is not supported for this feature.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 

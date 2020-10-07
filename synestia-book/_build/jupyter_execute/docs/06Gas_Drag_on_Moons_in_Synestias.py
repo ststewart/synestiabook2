@@ -31,7 +31,7 @@
 # Test this as you interact with the figure below, which plots the gas drag acceleration for a number of relative velocities. Notice how each of the parameters ("Size of moonlet", "Gas drag coefficient", and "Gas density") affects the magnitude of the gas drag.
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
+# Access interactive features by 'Launch Binder' or 'Launch CoLab' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 
@@ -112,11 +112,22 @@ widgets.HBox([left_box0,right_box0,left_box1,right_box1])
 # 3. The Moon, x = 20,000,000 m, y = 20,000,000 m, and z = 15,000,000 m
 # 4. Cow, x = 20,000,000 m, y = 20,000,000 m, and z = 0 m
 
+# ```{margin} Running a code cell
+# Access interactive features by 'Launch Binder' or 'Launch CoLab' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. If using CoLab (loads faster), you need to edit the code cell as directed to install rebound.
+# ```
 # Click the + symbol to see the code that generates the next interactive feature.
 
 # In[2]:
 
 
+#Dear Reader: If using CoLab, remove the # from the line below and shift-return to install rebound
+#!pip install rebound
+
+
+# In[3]:
+
+
+# interactive feature
 import math
 import numpy as np
 import rebound
