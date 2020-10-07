@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - numpy
-  - matplotlib
+  - matplotlib 3.2.6
   - ipywidgets
   - scipy
   - rebound
