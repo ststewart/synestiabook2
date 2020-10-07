@@ -16,7 +16,10 @@ execute:
 #######################################################################################
 # HTML-specific settings
 html:
+  favicon                     : "docs/favicon.ico"
   home_page_in_navbar         : false
+  google_analytics_id         : UA-15464495-6
+  
 
 # #######################################################################################
 # Interact link settings
@@ -37,5 +40,3 @@ latex:
   latex_documents:
     targetname: book.tex
 
-html:
-  google_analytics_id: UA-15464495-6
