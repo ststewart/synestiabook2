@@ -591,3 +591,5 @@ plt.close()
 # Carter, P. J., Lock, S. J., & Stewart, S. T. (2020). The Energy Budgets of Giant Impacts. <i>Journal of Geophysical Research: Planets (American Geophysical Union)</i>, 125 (1), 1-18.
 # 
 # U.S. Energy Information Administration. (2015). <i>Consumption and Expenditures Table 1.1 Summary consumption and expenditures in the U.S. - totals and intensities</i>. 2015 Residential Energy Consumption Survey Data. Retrieved from https://www.eia.gov/consumption/residential/data/2015/c&e/pdf/ce1.1.pdf (EIA)
+
+# [QUICK LINKS TO INTERACTIVE CONTENT IN BINDER](./QuickLinks.md)
