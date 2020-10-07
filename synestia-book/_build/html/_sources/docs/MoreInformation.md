@@ -9,7 +9,7 @@ online or print subscription.<p>
 Sarah T. Stewart, TED Talk<p>
 
 <iframe width="560" height="360"
-src="https://www.ted.com/talks/sarah_t_stewart_where_did_the_moon_come_from_a_new_theory?language=en" 
+src="https://youtu.be/7uRPPaYuu44" 
 frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
