@@ -60,8 +60,10 @@ del ipywidgets
 get_ipython().system('jupyter-book --version')
 
 
-# In[ ]:
+# This book was updated on
+
+# In[2]:
 
 
-
+get_ipython().system('date')
 

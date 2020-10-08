@@ -23,6 +23,6 @@ being presented.<p>
 <p>
 Image credits: Logo image (Simon Lock); Cover page image
 (S. T. Stewart, NASA)<br>
-Updated October 7, 2020<p>
+
 
 
