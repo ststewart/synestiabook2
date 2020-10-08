@@ -6,6 +6,7 @@
 in science.</center><p>
 <p>
 
+<b>Jupyter Book Navigation</b><p>
 In addition to clicking on the hyperlinks in the menus, you can page through this book using the arrow keys on your keyboard
 and forward and back web page gestures on a trackpad.<p>
 
