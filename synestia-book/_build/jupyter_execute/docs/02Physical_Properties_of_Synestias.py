@@ -33,10 +33,11 @@
 
 # Dear Reader, if you are using this notebook in CoLab, you need to fetch a few files from github
 # uncomment the lines below and shift-return to execute this cell
+# you can check that the files downloaded by hitting the folder refresh button in co-lab
 
 #import os
-#os.system('wget https://github.com/ststewart/synestiabook2/tree/master/synestia-book/docs/TE_Example03_Cool01_snapshot_10500_long')
-#os.system('wget https://github.com/ststewart/synestiabook2/tree/master/synestia-book/docs/TE_Example01_Cool05_snapshot_4096_long')
+#os.system('wget https://github.com/ststewart/synestiabook2/blob/master/synestia-book/docs/TE_Example01_Cool05_snapshot_4096_long?raw=true -O TE_Example01_Cool05_snapshot_4096_long')
+#os.system('wget https://github.com/ststewart/synestiabook2/blob/master/synestia-book/docs/TE_Example03_Cool01_snapshot_10500_long?raw=true -O TE_Example03_Cool01_snapshot_10500_long')
 
 
 # In[2]:
