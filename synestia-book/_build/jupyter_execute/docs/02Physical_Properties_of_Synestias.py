@@ -31,11 +31,23 @@
 # In[1]:
 
 
+# Dear Reader, if you are using this notebook in CoLab, you need to fetch a few files from github
+# uncomment the lines below and shift-return to execute this cell
+
+import os
+os.system('wget https://github.com/ststewart/synestiabook2/tree/master/synestia-book/docs/TE_Example03_Cool01_snapshot_10500_long')
+os.system('wget https://github.com/ststewart/synestiabook2/tree/master/synestia-book/docs/TE_Example01_Cool05_snapshot_4096_long')
+
+
+# In[2]:
+
+
 # STSM modified to remove use of module syndef and embed necessary functions into this cell
 # from syndef import synfits
 
 import numpy as np
 import struct
+import urllib.request
 G=6.674e-11 #SI
 
 
@@ -368,10 +380,11 @@ class Snapshot:
 
 
 SNAP_CukStewart=Snapshot()
-SNAP_CukStewart.load('syndef/TE_Example03_Cool01_snapshot_10500_long',thermo=True) #Cuk & Stewart 2012 style giant impact
+SNAP_CukStewart.load('TE_Example03_Cool01_snapshot_10500_long',thermo=True) #Cuk & Stewart 2012 style giant impact
 
 
-# In[2]:
+
+# In[3]:
 
 
 #import numpy as np  # loaded above
@@ -582,7 +595,7 @@ interact(temperature_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=
 
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[3]:
+# In[4]:
 
 
 #do same thing for pressure
@@ -725,7 +738,7 @@ interact(pressure_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=2e3
 
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[4]:
+# In[5]:
 
 
 #do same thing for density
@@ -869,12 +882,12 @@ interact(density_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=2e3,
 
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[5]:
+# In[6]:
 
 
 # stsm load canup 2012 results
 SNAP_Canup=Snapshot()
-SNAP_Canup.load('syndef/TE_Example01_Cool05_snapshot_4096_long',thermo=True) #Canup 2012 style giant impact
+SNAP_Canup.load('TE_Example01_Cool05_snapshot_4096_long',thermo=True) #Canup 2012 style giant impact
 
 
 G = 6.67408e-11 #mks #gravitational constant
