@@ -65,15 +65,22 @@
 # You may have to be patient while the plots load. If there is output but no images, re-run the notebook. If the plots do not load after 1-2 minutes, restart the notebook.
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. Currently, CoLab is not supported for this feature.
+# Access interactive features by 'Launch CoLab' or 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. If using CoLab (loads faster), you need to edit the code cell as directed to install rebound.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
+
+# In[ ]:
+
+
+#Dear Reader: If using CoLab, remove the # from the line below and shift-return to install rebound
+
+#!pip install rebound
+
 
 # In[1]:
 
 
 import rebound
-from syndef import synfits #import synestia snapshot (impact database)
 import numpy as np
 from ipywidgets import *
 import math
@@ -81,8 +88,15 @@ import matplotlib.pyplot as plt
 
 dens = 3000. #kg/m^3
 G_hr=(6.674e-11)*(3600**2) #gravitational constant converted to m^3 kg^-1 hr^-2
-Mass_syn=np.sum(synfits.SNAP_CukStewart.m) #Earth mass synestia in kg
-J2Ma2 = synfits.SNAP_Canup.J2Ma2
+
+# stsm -- do not need to load the model files here
+#from syndef import synfits #import synestia snapshot (impact database)
+#Mass_syn=np.sum(synfits.SNAP_CukStewart.m) #Earth mass synestia in kg
+#J2Ma2 = synfits.SNAP_Canup.J2Ma2
+#print(Mass_syn)
+#print(J2Ma2)
+Mass_syn=5.970890871119314e+24
+J2Ma2=9.294291884637224e+37
 
 #from rebound.plotting import fading_line
 def pltJ2(rad_moon,sma,i,ecc):
@@ -205,7 +219,7 @@ interact(pltJ2,
 
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[2]:
+# In[9]:
 
 
 G_hr=(6.674e-11)*(3600**2) #gravitational constant converted to m^3 kg^-1 hr^-2

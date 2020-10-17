@@ -24,14 +24,14 @@
 # ### Temperatures in an Earth-mass Synestia
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch CoLab' or 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. CoLab launches more quickly.
+# Access interactive features by 'Launch CoLab' or 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. If using CoLab (loads faster), you need to edit the code cell as directed to gather data files.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 
 # In[1]:
 
 
-# Dear Reader, if you are using this notebook in CoLab, you need to fetch a few files from github
+# Dear Reader, if you are using this notebook in CoLab, you need to fetch data files from github
 # uncomment the lines below and shift-return to execute this cell
 # you can check that the files downloaded by hitting the folder refresh button in co-lab
 

@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/Users/sstewart/anaconda3/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/Users/sstewart/anaconda3/lib/python3.7/site-packages/nbclient/client.py", line 1082, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/sstewart/anaconda3/lib/python3.7/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/sstewart/anaconda3/lib/python3.7/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/sstewart/anaconda3/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/Users/sstewart/anaconda3/lib/python3.7/site-packages/nbclient/client.py", line 536, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/Users/sstewart/anaconda3/lib/python3.7/site-packages/nbclient/client.py", line 827, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/sstewart/anaconda3/lib/python3.7/site-packages/nbclient/client.py", line 735, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+G_hr=(6.674e-11)*(3600**2) #gravitational constant converted to m^3 kg^-1 hr^-2
+Mass_syn=np.sum(synfits.SNAP_CukStewart.m) #Earth mass synestia in kg
+J2Ma2 = synfits.SNAP_Canup.J2Ma2
+const1 = -6. #coefficient of pressure gradient fit
+const2 = 57.4 #exponent of pressure gradient fit
+const5 = 10.55 #coefficient of density height fit
+const6 = 0.86 #exponent of density scale height fit
+const3 = 0.9e35 #coefficient of density midplane fit
+const4 = -4.7 #exponent of density scale midplane fit
+
+def omgJ2Press(Pmultiplier,rxy_orbit):
+    cosO = 0.
+    grav = -G_hr*Mass_syn*(rxy_orbit**(-2)) - 1.5*G_hr*J2Ma2*(rxy_orbit**(-4))*(3.*cosO*cosO - 1.)
+    zsfit = const5*(rxy_orbit**const6)
+    rhofit = const3*(rxy_orbit**const4)
+    Pfactor = Pmultiplier*const1*(10**const2)*(rxy_orbit**(const1-1.))/rhofit #*Pmultiplier
+    return np.sqrt((Pfactor - grav)/rxy_orbit)
+
+def pltomg(Pmult):
+    rxy=np.linspace(1e7,6e7,50) #m
+    omg=omgJ2Press(Pmult,rxy) #hr^-1
+    omg_Kep=np.sqrt(G_hr*Mass_syn/(rxy**3)) #hr^-1
+    
+    plt.figure(figsize=(10,6))
+    plt.plot(rxy/1e3, omg, 'r',label='Pressure supported orbit with J$_2$')
+    plt.plot(rxy/1e3, omg_Kep, '--', color='grey',label='Keplerian orbit')
+    plt.xlabel('Cylindrical Radius r$_{xy}$ (km)')
+    plt.ylabel('Angular Velocity $\omega$ (hr$^{-1}$)')
+    plt.legend(loc=1)
+    plt.show()
+    plt.close()
+    
+style = {'description_width': 'initial'}
+layout = {'width': '400px'}
+interact(pltomg,
+         Pmult=FloatLogSlider(value=1, min=-1, max=0.4, base=10, step=.2, description='Pressure term multiplier',
+                        continuous_update=False, readout=True, readout_format='.1f', style=style, layout=layout),
+         )
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-3-4cb79b4e95b6>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mG_hr[0m[0;34m=[0m[0;34m([0m[0;36m6.674e-11[0m[0;34m)[0m[0;34m*[0m[0;34m([0m[0;36m3600[0m[0;34m**[0m[0;36m2[0m[0;34m)[0m [0;31m#gravitational constant converted to m^3 kg^-1 hr^-2[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mMass_syn[0m[0;34m=[0m[0mnp[0m[0;34m.[0m[0msum[0m[0;34m([0m[0msynfits[0m[0;34m.[0m[0mSNAP_CukStewart[0m[0;34m.[0m[0mm[0m[0;34m)[0m [0;31m#Earth mass synestia in kg[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mJ2Ma2[0m [0;34m=[0m [0msynfits[0m[0;34m.[0m[0mSNAP_Canup[0m[0;34m.[0m[0mJ2Ma2[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mconst1[0m [0;34m=[0m [0;34m-[0m[0;36m6.[0m [0;31m#coefficient of pressure gradient fit[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mconst2[0m [0;34m=[0m [0;36m57.4[0m [0;31m#exponent of pressure gradient fit[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'synfits' is not defined
+NameError: name 'synfits' is not defined
+

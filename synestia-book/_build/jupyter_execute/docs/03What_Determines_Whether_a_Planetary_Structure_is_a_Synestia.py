@@ -24,7 +24,7 @@
 # So, think of it like this: if a planet's equatorial radius exceeds the orbital radius of a geosynchronous satellite, then the planet morphs into a synestia. Please see the interactive below. Pay attention to how the planet's equator (at z = 0 km on orange body) and moon (red dot) move in relation to one another as the planet's rotation speeds up (length of day decreases) and reaches the corotation limit (body turns cyan).
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch Binder' or 'Launch CoLab' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
+# Access interactive features by 'Launch CoLab' or 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. CoLab launches more quickly.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 

@@ -31,7 +31,7 @@
 # Test this as you interact with the figure below, which plots the gas drag acceleration for a number of relative velocities. Notice how each of the parameters ("Size of moonlet", "Gas drag coefficient", and "Gas density") affects the magnitude of the gas drag.
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch Binder' or 'Launch CoLab' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code.
+# Access interactive features by 'Launch CoLab' or 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. CoLab launches more quickly.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 

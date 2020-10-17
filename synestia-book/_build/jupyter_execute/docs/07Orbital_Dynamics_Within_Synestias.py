@@ -59,7 +59,7 @@
 # The interactive plot below maintains the planet's Keplerian orbit and angular momentum while allowing you to change the planet's mass. The planet's angular momentum is currently set to roughly the present-day angular momentum of Earth. How strong of a constraint is conservation of angular momentum on a Keplerian orbit (e.g. how does changing the mass affect the trajectory of the planet's orbit)?
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch Binder' or 'Launch CoLab' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. If using CoLab (loads faster), you need to edit the code cell as directed to install rebound.
+# Access interactive features by 'Launch CoLab' or 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. If using CoLab (loads faster), you need to edit the code cell as directed to install rebound.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 
@@ -67,6 +67,7 @@
 
 
 #Dear Reader: If using CoLab, remove the # from the line below and shift-return to install rebound
+
 #!pip install rebound
 
 
