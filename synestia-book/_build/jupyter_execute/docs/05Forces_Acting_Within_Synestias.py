@@ -69,7 +69,7 @@
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[ ]:
+# In[1]:
 
 
 #Dear Reader: If using CoLab, remove the # from the line below and shift-return to install rebound
@@ -77,7 +77,7 @@
 #!pip install rebound
 
 
-# In[1]:
+# In[2]:
 
 
 import rebound
@@ -219,12 +219,15 @@ interact(pltJ2,
 
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[9]:
+# In[3]:
 
 
 G_hr=(6.674e-11)*(3600**2) #gravitational constant converted to m^3 kg^-1 hr^-2
-Mass_syn=np.sum(synfits.SNAP_CukStewart.m) #Earth mass synestia in kg
-J2Ma2 = synfits.SNAP_Canup.J2Ma2
+#Mass_syn=np.sum(synfits.SNAP_CukStewart.m) #Earth mass synestia in kg
+#J2Ma2 = synfits.SNAP_Canup.J2Ma2
+Mass_syn=5.970890871119314e+24
+J2Ma2=9.294291884637224e+37
+
 const1 = -6. #coefficient of pressure gradient fit
 const2 = 57.4 #exponent of pressure gradient fit
 const5 = 10.55 #coefficient of density height fit
