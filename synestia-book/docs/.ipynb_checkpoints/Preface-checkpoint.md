@@ -16,8 +16,7 @@ different platforms through a web interface. The purpose of these
 interactive features are to help the reader learn and explore the concepts
 being presented.<p>
 
-
-
+The CoLab option for the interactives launches more quickly than Binder.<p>
 <p>
 <p>
 <p>

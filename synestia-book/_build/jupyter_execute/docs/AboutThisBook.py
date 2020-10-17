@@ -60,10 +60,19 @@ del ipywidgets
 get_ipython().system('jupyter-book --version')
 
 
+# Change log:<br>
+# 10/17/2020: Removed dependence on synfits module in 02Physical_Properties_of_Synestias<br>
+# 
 # This book was updated on
 
 # In[2]:
 
 
 get_ipython().system('date')
+
+
+# In[ ]:
+
+
+
 

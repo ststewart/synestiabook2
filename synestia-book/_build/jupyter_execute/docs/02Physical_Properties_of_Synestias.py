@@ -24,15 +24,358 @@
 # ### Temperatures in an Earth-mass Synestia
 
 # ```{margin} Running a code cell
-# Access interactive features by 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. Currently, CoLab is not supported for this feature.
+# Access interactive features by 'Launch CoLab' or 'Launch Binder' from the rocket logo at the top of the page. When the interactive environment is ready, place your cursor in the code cell and press shift-return to execute the code. CoLab launches more quickly.
 # ```
 # Click the + symbol to see the code that generates the next interactive feature.
 
 # In[1]:
 
 
-from syndef import synfits
+# STSM modified to remove use of module syndef and embed necessary functions into this cell
+# from syndef import synfits
+
 import numpy as np
+import struct
+G=6.674e-11 #SI
+
+
+class GadgetHeader:
+    """Class for Gadget snapshot header."""
+    def __init__(self, t=0, nfiles=1, ent=1):
+        self.npart = np.zeros(6)
+        self.mass = np.zeros(6)
+        self.time = t
+        self.redshift = 0
+        self.flag_sfr = 0
+        self.flagfeedbacktp = 0
+        self.npartTotal = np.zeros(6)
+        self.flag_cooling = 0
+        self.num_files = nfiles
+        self.BoxSize = 0
+        self.Omega0 = 0
+        self.OmegaLambda = 0
+        self.HubbleParam = 1
+        self.flag_stellarage = 0
+        self.flag_metals = 0
+        self.nallhw = np.zeros(6)
+        self.flag_entr_ics = ent
+#
+class Snapshot:
+    """Gadget snapshot class
+    Includes header and gas particle data, with functions for reading and writing snapshots.
+    load() -- load Gadget snapshot data
+    remove() -- remove particle from snapshot
+    write() -- save snapshot
+    identify() -- determine material types
+    calc_vap_frac() -- calculate vapour fractions of particles
+    #GOH 01/15/2020
+    -- fit midplane density profile
+    -- fit midplane entropy profile
+    -- fit midplane pressure profile
+    -- fit midplane temperature profile
+    -- fit midplane velocity profile
+    -- fit midplane sound speed profile
+    -- fit scale height for density
+    -- fit scale height for entropy
+    -- fit scale height for pressure
+    -- fit scale height for temperature
+    -- fit scale height for velocity profile
+    -- fit scale height for sound speed profile
+    """
+    def __init__(self):
+        self.header = GadgetHeader()
+        self.N = 0
+        self.pos = np.zeros(3)
+        self.vel = np.zeros(3)
+        self.id = 0
+        self.m = 0
+        self.S = 0
+        self.rho = 0
+        self.hsml = 0
+        self.pot = 0
+        self.P = 0
+        self.T = 0
+        self.U = 0
+        self.cs = 0
+        #self.accel = 0
+        #self.dt = 0
+        #self.vapfrac = 0
+        self.omg_z = 0
+        self.J2Ma2 = 0
+        self.g = 0
+        self.ind_outer_mid_spl = 0
+        self.pmidfit = 0
+        self.rhomidfit = 0,0,0
+#
+    def load(self, fname, thermo=False):
+        f = open(fname, 'rb')
+        struct.unpack('i', f.read(4))
+        #HEADER
+        self.header.npart = np.array(struct.unpack('iiiiii', f.read(24)))
+        self.header.mass = np.array(struct.unpack('dddddd', f.read(48)))
+        (self.header.time, self.header.redshift, self.header.flag_sfr,
+         self.header.flag_feedbacktp) = struct.unpack('ddii', f.read(24))
+        self.header.npartTotal = np.array(struct.unpack('iiiiii', f.read(24)))
+        (self.header.flag_cooling, self.header.num_files, self.header.Boxsize,
+         self.header.Omega0, self.header.OmegaLambda, self.header.HubbleParam,
+         self.header.flag_stellarage,
+         self.flag_metals) = struct.unpack('iiddddii', f.read(48))
+        #print(self.header.Boxsize,self.header.flag_stellarage,self.flag_metals)
+        self.header.nallhw = np.array(struct.unpack('iiiiii', f.read(24)))
+        self.header.flag_entr_ics = struct.unpack('i', f.read(4))
+        struct.unpack('60x', f.read(60))
+        struct.unpack('i', f.read(4))
+        if self.header.num_files != 1:
+            print("WARNING! Number of files:", self.header.num_files,
+                  ", not currently supported.\n")
+        self.N = self.header.npart[0]
+        count=str(self.N)
+        count3=str(3*self.N)
+        #PARTICLE DATA
+        struct.unpack('i', f.read(4))
+        self.pos = struct.unpack(count3 + 'f', f.read(3*self.N*4))
+        struct.unpack('i', f.read(4))
+        struct.unpack('i', f.read(4))
+        self.vel = struct.unpack(count3 + 'f', f.read(3*self.N*4))
+        struct.unpack('i', f.read(4))
+        struct.unpack('i', f.read(4))
+        self.id = np.array(struct.unpack(count + 'i', f.read(self.N*4)))
+        struct.unpack('i', f.read(4))
+        struct.unpack('i', f.read(4))
+        self.m = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+        struct.unpack('i', f.read(4))
+        struct.unpack('i', f.read(4))
+        self.S = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+        struct.unpack('i', f.read(4))
+        struct.unpack('i', f.read(4))
+        self.rho = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+        struct.unpack('i', f.read(4))
+        struct.unpack('i', f.read(4))
+        self.hsml = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+        struct.unpack('i', f.read(4))
+        struct.unpack('i', f.read(4))
+        self.pot = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+        struct.unpack('i', f.read(4))
+        if thermo:
+            struct.unpack('i', f.read(4))
+            self.P = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+            struct.unpack('i', f.read(4))
+            struct.unpack('i', f.read(4))
+            self.T = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+            struct.unpack('i', f.read(4))
+            if len(f.read(4)) == 4:
+                self.U = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+                struct.unpack('i', f.read(4))
+            if len(f.read(4)) == 4:
+                self.cs = np.array(struct.unpack(count + 'f', f.read(self.N*4)))
+                struct.unpack('i', f.read(4))
+        f.close()
+        #REARRANGE
+        self.pos = np.array(self.pos).reshape((self.N, 3))*(1e-2) #m
+        self.x = self.pos.T[0]
+        self.y = self.pos.T[1]
+        self.z = self.pos.T[2]
+        self.vel = np.array(self.vel).reshape((self.N, 3))*(1e-2) #m/s
+        self.vx = self.vel.T[0]
+        self.vy = self.vel.T[1]
+        self.vz = self.vel.T[2]
+        #print("Read %d" % self.N, "particles from %s" % fname)
+        #CALCULATE CENTER OF MASS
+        N=25
+        temp=np.argsort(self.pot)
+        xcm=np.mean(self.x[temp[0:N]])
+        ycm=np.mean(self.y[temp[0:N]])
+        zcm=np.mean(self.z[temp[0:N]])
+        vxcm=np.mean(self.vx[temp[0:N]])
+        vycm=np.mean(self.vy[temp[0:N]])
+        vzcm=np.mean(self.vz[temp[0:N]])
+        #MOVE ONTO CENTRAL FRAME
+        self.x=self.x-xcm
+        self.y=self.y-ycm
+        self.z=self.z-zcm
+        self.vx=self.vx-vxcm
+        self.vy=self.vy-vycm
+        self.vz=self.vz-vzcm
+        #CALCULATE BOUND MASS
+        self.m = self.m*(1e-3) #kg
+        #bndm=self.m[temp[0]]
+        #G=6.67408E-11 #mks
+        #oldm=bndm/10.
+        #tol=1E-5
+        #while (np.abs(oldm-bndm)>tol):
+        #    oldm=bndm
+        #    v2=np.add(np.add(np.power(self.vx,2.0),np.power(self.vy,2.0))np.power(self.vz,2.0))
+        #    r=np.sqrt(np.add(np.add(np.power(self.x,2.0),np.power(self.y,2.0))np.power(self.z,2.0)))
+        #    KE=0.5*np.multiply(self.m,v2)
+        #    PE=-G*bndm*np.divide(self.m,r)
+        #    bndm=np.sum(self.m[np.where((KE+PE)<0.)[0]])
+        #CONVERT REST OF UNITS TO MKS
+        self.rho = self.rho*(1e3) #kg/m3
+        self.P = self.P*1e9 #Pa
+        self.S = self.S*(1e-4) #J/K/kg
+        self.pot = self.pot*(1e-4) #J/kg
+        self.U = self.U*(1e-4) #J/kg
+        self.cs = self.cs*(1e-2) #m/s
+        self.rxy = np.add(np.power(self.x, 2), np.power(self.y, 2)) #m2
+        radius2 = np.add(self.rxy,np.power(self.z,2)) #m2
+        self.rxy = np.sqrt(self.rxy) #m
+        self.omg_z = (self.vx**2 + self.vy**2)**0.5/self.rxy
+        self.J2Ma2 = -np.sum(0.5*np.multiply(self.m,radius2)*(3.0*np.divide(np.power(self.z,2),radius2) - 1.0)) #kg m2
+        self.g = np.zeros((self.N, 3))
+        self.g_x = self.g.T[0]
+        self.g_y = self.g.T[1]
+        self.g_z = self.g.T[2]
+        self.g_x = (G*np.sum(self.m)*self.x/((np.sqrt(self.rxy**2 + self.z**2))**3)) - (3.*G*self.J2Ma2*((self.rxy**2 + self.z**2)**-2.5)*self.x*(2.5*((self.z**2)/(self.rxy**2 + self.z**2)) - 1.5))
+        self.g_y = (G*np.sum(self.m)*self.y/((np.sqrt(self.rxy**2 + self.z**2))**3)) - (3.*G*self.J2Ma2*((self.rxy**2 + self.z**2)**-2.5)*self.y*(2.5*((self.z**2)/(self.rxy**2 + self.z**2)) - 1.5))
+        self.g_z = (G*np.sum(self.m)*self.z/((np.sqrt(self.rxy**2 + self.z**2))**3)) - (3.*G*self.J2Ma2*((self.rxy**2 + self.z**2)**-2.5)*self.z*(2.5*((self.z**2)/(self.rxy**2 + self.z**2)) - 1.5))
+        #print("Centered bound mass.\n")
+#
+    def indices(self,zmid,zmax,rxymin,rxymax,rxymida,rxymidb):
+        #DETERMINE OUTER REGION PARTICLES (truncated at rxymin and rxymax)
+        self.ind_outer=np.where((self.rxy >= rxymin) & (self.rxy <= rxymax) & (np.abs(self.z) <= zmax))
+        self.ind_outer_1=np.where((self.rxy >= rxymin) & (self.rxy < rxymida) & (np.abs(self.z) <= zmax))
+        self.ind_outer_2=np.where((self.rxy > rxymidb) & (self.rxy <= rxymax) & (np.abs(self.z) <= zmax))
+        self.ind_outer_S=np.where(self.rxy >= rxymin)
+
+        #DETERMINE MIDPLANE OUTER REGION PARTICLES
+        self.ind_outer_mid=np.where((self.rxy >= rxymida) & (np.abs(self.z) <= zmid) & (self.rxy <= rxymidb))
+        self.ind_outer_mid_spl = np.where((np.abs(self.z) <= zmid) & (self.rxy <= rxymax) & (self.rxy >= rxymin))
+        self.ind_outer_mid_lsq=np.where((np.abs(self.z) <= zmid) & (self.rxy >= 9.4e6))
+        
+        #DETERMINE MIDPLANE PARTICLES
+        self.ind_mid=np.where(np.abs(self.z) <= zmid)
+# 
+    def fit_Pmid(self,knots,extra=None):
+        #DETERMINE SPLINE FIT TO MIDPLANE PRESSURE CURVE
+        ind_outer_mid_spl=np.where((np.abs(SNAP.z) <= zmid) & (SNAP.rxy <= rxymax) & (SNAP.rxy >= rxymin))
+        indsort=np.argsort(SNAP.rxy[ind_outer_mid_spl])
+        SPHrxyMm = SNAP.rxy[ind_outer_mid_spl][indsort]/1e6
+        SPHplog = np.log10(SNAP.P[ind_outer_mid_spl][indsort])
+        pknots=[*knots]
+        self.pLSQUSPL = LSQUnivariateSpline(SPHrxyMm, SPHplog, t=pknots, k=3)
+        if extra:
+            print('knots for midplane pressure curve are rxy = {}'.format(pLSQUSPL.get_knots()))
+            print('coefficients for midplane pressure curve are {}'.format(pLSQUSPL.get_coeffs()))
+    
+    def fit_rhomid(self,extra=None):
+        #DETERMINE LEAST-SQUARES FIT TO RESIDUAL OF MIDPLANE RHO S-CURVE 1
+        params_guess=np.ones(4)
+        res_lsq = least_squares(resfunc, params_guess, loss='soft_l1', f_scale=0.001, 
+                                args=(np.log10(self.rxy[self.ind_outer_2]/1e6), np.log10(self.rho[self.ind_outer_2])))
+        
+        #DETERMINE LEAST-SQUARES FIT TO RESIDUAL OF MIDPLANE RHO S-CURVE 2
+        params_guess_spl=np.array([150.,1.4,16.,-5.7])
+        res_lsq_spl = least_squares(resfuncspl, params_guess_spl, loss='soft_l1', f_scale=0.001, 
+                                    args=(np.log10(self.rxy[self.ind_outer_mid]/1e6), np.log10(self.rho[self.ind_outer_mid])))
+        
+        #DETERMINE LEAST-SQUARES FIT TO RESIDUAL OF MIDPLANE RHO LINE
+        params_guess_lin=np.ones(2)
+        res_lsq_lin = least_squares(resfunclin, params_guess_lin, loss='soft_l1', f_scale=0.001,
+                                    args=(np.log10(self.rxy[self.ind_outer_1]/1e6), np.log10(self.rho[self.ind_outer_1])))
+        
+        if extra:
+            print('Least Squares Fit to Midplane Density - S-curve \n')
+            print(res_lsq)
+            print('\n Least Squares Fit to Midplane Density - Spline \n')
+            print(res_lsq_spl)
+            print('\n Least Squares Fit to Midplane Density - Linear \n')
+            print(res_lsq_lin)
+            print('\n Params for midplane density:\n fit 0 {}\n fit 1 {}\n fit 2 {}\n Linear interpolation points are (x1_lim, y1_lim) = ({}, {}) and (x2_lim, y2_lim) = ({}, {})'.format(res_lsq_lin.x,res_lsq_spl.x,res_lsq.x,x1int,y1int,x2int,y2int))
+            
+        self.rhomidfit = res_lsq_lin.x,res_lsq_spl.x,res_lsq.x
+#        
+    def fit_Tmid(self,extra=None):
+        params_guess_T=np.asarray([4.e12,-1.66,2.5])
+        res_lsq_pow = least_squares(resfuncpow, params_guess_T, ftol=1e-10, xtol=1e-11, loss='soft_l1',
+                                    args=(SNAP.rxy[ind_outer_mid_lsq], SNAP.T[ind_outer_mid_lsq]/1.e3))
+        if extra:
+            print('\n Least Squares Fit to Midplane Temperature - Power Law \n')
+            print(res_lsq_pow)
+#        
+    def fit_smid(self,extra=None):
+        params_guess_S = np.ones(5)
+        res_lsq_lp = least_squares(resfunclinpiece, params_guess_S, ftol=1e-8, xtol=1e-8, loss='soft_l1', 
+                                   args=(SNAP.rxy[ind_outer_mid_spl]/1e6, SNAP.S[ind_outer_mid_spl]))
+        if extra:
+            print('\n Least Squares Fit to Midplane Entropy - Linear Piecewise \n')
+            print(res_lsq_lp)
+#            
+    def fit_zs_rho(self,extra=None):
+        #SCALE HEIGHT FIT
+        #bin by rxy, fit each bin's rho(z) profile and find z where rho/rho_mid=1/e
+        ind_outer_offmid = np.where((SNAP.rxy >= 7.e6) & (np.abs(SNAP.z) > 1.e6))
+        bins = np.arange(7.e6,np.amax(SNAP.rxy[ind_outer_offmid])+1.e6,1.e6)
+        #bins_S = np.arange(7.e6,np.amax(SNAP.rxy[ind_outer_S])+1.e6,1.e6)
+        ind_bin = np.digitize(SNAP.rxy[ind_outer_offmid],bins,right=False)
+        #ind_bin_S = np.digitize(SNAP.rxy[ind_outer_S],bins_S,right=False)
+        bins=(bins/1e6)-0.5 #convert to Mm
+        #bins_S=(bins_S/1e6)-0.5
+        params_guess_exp = 1.
+        #def resfuncpieceS(params,x,y,z):
+            #x is rxy, y is z, z is S
+        #    f1 = params[0]
+        #    f2 = params[1]
+        #    f3 = lambda y: params[2]*y**2 + params[3]*y + params[4]
+        #    return np.select([(y>params[5]),(y<=params[5])*(y>=params[6]),(y<params[6])*(x<10.)], [f1,f2,f3]) - z
+        #params_guess_Spiece = np.asarray([4500.,8000.,1.,1.,4000.,15.,1.])
+        res_lsq_exp = []
+        #res_lsq_Spiece = []
+        for i in range(len(bins)):
+            ind_rxy = np.where(ind_bin == i)
+            SNAP_rhodiv_offmid = np.log(SNAP.rho[ind_outer_offmid][ind_rxy]*(
+                10**(-piece(np.log10(SNAP.rxy[ind_outer_offmid][ind_rxy]/1.e6),res_lsq_lin.x,res_lsq_spl.x,res_lsq.x))))
+            reslsqexp = least_squares(resfuncexp, params_guess_exp, bounds=(1,np.inf), loss='soft_l1', f_scale=0.001, 
+                                      args=(np.abs(SNAP.z[ind_outer_offmid][ind_rxy]/1e6),SNAP_rhodiv_offmid))
+            if reslsqexp.active_mask[0] == -1:
+                res_lsq_exp.append(np.nan)
+            else:
+                res_lsq_exp.append(reslsqexp.x[0])
+        #for i in range(len(bins_S)):
+        #    ind_rxy_S = np.where(ind_bin_S == i)
+        #    print(ind_rxy_S.active_mask)
+        #    if ind_rxy_S.active_mask == -1:
+        #        res_lsq_Spiece.append(np.nan)
+        #    else:
+        #        reslsqSpiece = least_squares(resfuncpieceS, params_guess_Spiece, loss='soft_l1', f_scale=0.001, args=(SNAP.rxy[ind_outer_S][ind_rxy_S]/1.e6,np.abs(SNAP.z[ind_outer_S][ind_rxy_S])/1e6,SNAP.S[ind_outer_S][ind_rxy_S]))
+        #        res_lsq_Spiece.append(reslsqSpiece.x)
+
+        res_lsq_exp = np.asarray(res_lsq_exp) #Mm
+        #res_lsq_Spiece = np.asarray(res_lsq_Spiece)
+        print('\n Binned Rxy Scale Height Fits')
+        print(res_lsq_exp)
+        #print(res_lsq_Spiece)
+
+        #MASKING SCALE HEIGHT FITS FOR NAN'S AND Z_S > 100 Mm
+        res_lsq_exp_mask = np.ma.fix_invalid(res_lsq_exp)
+        res_lsq_exp_compress = res_lsq_exp_mask.compressed()
+        bins_mask = np.ma.masked_array(bins, mask=res_lsq_exp_mask.mask)
+        bins_compress = bins_mask.compressed()
+        res_lsq_exp_compress_mask = np.ma.masked_greater(res_lsq_exp_compress,100.)
+        res_lsq_exp_compress2 = res_lsq_exp_compress_mask.compressed()
+        bins_compress_mask = np.ma.masked_array(bins_compress, mask=res_lsq_exp_compress_mask.mask)
+        bins_compress2 = bins_compress_mask.compressed()
+        print('\n Masked Rxy Scale Heights')
+        print(zip(bins_compress2,res_lsq_exp_compress2))
+        knots=[25.5,30.5,32.5,39.5,45.5,57.5]
+        LSQUSPL=LSQUnivariateSpline(bins_compress2, res_lsq_exp_compress2, t=knots, k=3)
+        if extra:
+            bknot = LSQUSPL.get_knots()
+            bcoef = LSQUSPL.get_coeffs()
+            print('\n LSQ Univariate Spline Fit to Scale Heights \n')
+            print('knots are rxy = {} (Mm)'.format(bknot))
+            print('coefficients are {}'.format(bcoef))
+
+
+
+SNAP_CukStewart=Snapshot()
+SNAP_CukStewart.load('syndef/TE_Example03_Cool01_snapshot_10500_long',thermo=True) #Cuk & Stewart 2012 style giant impact
+
+
+# In[2]:
+
+
+#import numpy as np  # loaded above
+
 from scipy.spatial import cKDTree
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -56,11 +399,20 @@ a_core = 3900. #km #a_core=b_core axisymmetric
 c_core = 3500. #km
 
 #assign particle information to single variable & convert units
-T_unfilt=synfits.SNAP_CukStewart.T #K
-x_unfilt=synfits.SNAP_CukStewart.x/1e3 #km
-y_unfilt=synfits.SNAP_CukStewart.y/1e3 #km
-z_unfilt=synfits.SNAP_CukStewart.z/1e3 #km
-S_unfilt=synfits.SNAP_CukStewart.S #J/K/kg
+# original gohollyday
+#T_unfilt=synfits.SNAP_CukStewart.T #K
+#x_unfilt=synfits.SNAP_CukStewart.x/1e3 #km
+#y_unfilt=synfits.SNAP_CukStewart.y/1e3 #km
+#z_unfilt=synfits.SNAP_CukStewart.z/1e3 #km
+#S_unfilt=synfits.SNAP_CukStewart.S #J/K/kg
+# stsm modified
+T_unfilt=SNAP_CukStewart.T #K
+x_unfilt=SNAP_CukStewart.x/1e3 #km
+y_unfilt=SNAP_CukStewart.y/1e3 #km
+z_unfilt=SNAP_CukStewart.z/1e3 #km
+S_unfilt=SNAP_CukStewart.S #J/K/kg
+
+
 filt=~((np.abs(z_unfilt)>30000.*(T_unfilt-5000.)**(-1./12.))&(T_unfilt>5000.))
 T=T_unfilt[filt]
 x=x_unfilt[filt]
@@ -230,11 +582,13 @@ interact(temperature_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=
 
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[2]:
+# In[3]:
 
 
 #do same thing for pressure
-P=synfits.SNAP_CukStewart.P #Pa
+#P=synfits.SNAP_CukStewart.P #Pa
+P=SNAP_CukStewart.P #Pa
+
 
 #function that gets nearest neighbor information for gridded points
 #and plots their physical property (pressure) value using pcolormesh
@@ -371,11 +725,13 @@ interact(pressure_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=2e3
 
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[3]:
+# In[4]:
 
 
 #do same thing for density
-rho=synfits.SNAP_CukStewart.rho #kg/m^3
+#rho=synfits.SNAP_CukStewart.rho #kg/m^3
+rho=SNAP_CukStewart.rho #kg/m^3
+
 
 #function that gets nearest neighbor information for gridded points
 #and plots their physical property (density) value using pcolormesh
@@ -513,14 +869,24 @@ interact(density_xy,zvalue = FloatSlider(value=0, min=-20e3, max=20e3, step=2e3,
 
 # Click the + symbol to see the code that generates the next interactive feature.
 
-# In[4]:
+# In[5]:
+
+
+# stsm load canup 2012 results
+SNAP_Canup=Snapshot()
+SNAP_Canup.load('syndef/TE_Example01_Cool05_snapshot_4096_long',thermo=True) #Canup 2012 style giant impact
 
 
 G = 6.67408e-11 #mks #gravitational constant
-M_Earth = np.sum(synfits.SNAP_Canup.m) #kg #Earth-mass synestia
+#M_Earth = np.sum(synfits.SNAP_Canup.m) #kg #Earth-mass synestia
+#U_syn = synfits.SNAP_Canup.pot/1e3 #kJ #gravitational potential energy of synestia point cloud
+#r_syn = np.sqrt(synfits.SNAP_Canup.x**2 + synfits.SNAP_Canup.y**2 + synfits.SNAP_Canup.z**2) #m
+# stsm
+M_Earth = np.sum(SNAP_Canup.m) #kg #Earth-mass synestia
+U_syn = SNAP_Canup.pot/1e3 #kJ #gravitational potential energy of synestia point cloud
+r_syn = np.sqrt(SNAP_Canup.x**2 + SNAP_Canup.y**2 + SNAP_Canup.z**2) #m
+
 R_Earth = 6378137. #m #equatorial radius of present-day Earth
-U_syn = synfits.SNAP_Canup.pot/1e3 #kJ #gravitational potential energy of synestia point cloud
-r_syn = np.sqrt(synfits.SNAP_Canup.x**2 + synfits.SNAP_Canup.y**2 + synfits.SNAP_Canup.z**2) #m
 n = len(r_syn)
 U_sphere = np.empty(n)
 for i in range(n):
